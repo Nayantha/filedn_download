@@ -74,4 +74,13 @@ if __name__ == '__main__':
         download_file(name, link)
         upload_to_telegram(f"./{name}")
         links_dic.pop(name)
-        save_to_json_file(file_name, links_dic)
+        with open(f"{file_name}", "r") as data_file:
+            # Reading old data
+            data = json.load(fp=data_file)
+        
+        # Updating old data with new data
+        data.update(data)
+        
+        with open(f"{file_name}", "w") as data_file:
+            # Saving updated data
+            json.dump(data, data_file, indent=4)
