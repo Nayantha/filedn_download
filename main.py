@@ -38,7 +38,7 @@ def get_links(driver: webdriver, url: str, output_file: dict):
 
 
 def download_file(name: str, download_link: str):
-    cmd = f"wget {download_link}";
+    cmd = f"wget {download_link}"
     os.system(cmd)
 
 
